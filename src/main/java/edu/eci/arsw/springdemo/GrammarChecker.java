@@ -10,11 +10,11 @@ public class GrammarChecker {
 
 	String x;
         
-        
 	public SpellChecker getSpellChecker() {
 		return sc;
 	}
 
+	@Autowired
 	public void setSpellChecker(SpellChecker sc) {
 		this.sc = sc;
 	}

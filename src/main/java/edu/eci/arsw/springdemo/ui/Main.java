@@ -5,7 +5,9 @@
  */
 package edu.eci.arsw.springdemo.ui;
 
+import edu.eci.arsw.springdemo.EnglishSpellChecker;
 import edu.eci.arsw.springdemo.GrammarChecker;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -13,11 +15,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  *
  * @author hcadavid
  */
+
 public class Main {
 
     public static void main(String a[]) {
         ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
         GrammarChecker gc = ac.getBean(GrammarChecker.class);
+        gc.setSpellChecker(new EnglishSpellChecker());
         System.out.println(gc.check("la la la "));
     }
 
